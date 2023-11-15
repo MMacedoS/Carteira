@@ -1,0 +1,15 @@
+
+/Control/Conexao.php
+# /index.php
+.autenticar.php
+# .config.php
+.functions.php
+/Config
+/vendor
+/fonts
+# /rota
+/scss
+/image
+/anexos
+.htaccess
+index.php
