@@ -129,7 +129,7 @@
 
     
     $('#novo').click(function(){
-        $('#exampleModalLabel').text("Cadastro de Hospedes");
+        $('#exampleModalLabel').text("Cadastro de Clientes");
         $('#modal').modal('show');        
     });
 
@@ -276,7 +276,7 @@
         $('#status').val(data[0].status);
         $('#id').val(data[0].id);
         $('#btnSubmit').addClass('Atualizar');
-        $('#exampleModalLabel').text("Atualizar Hospedes");
+        $('#exampleModalLabel').text("Atualizar Clientes");
         $('#modal').modal('show');   
     }
 
@@ -303,6 +303,24 @@
         // Redireciona para a página de destino
         window.location.href = redirectUrl;
     }
+
+    const telefone = document.getElementById('telefone');
+
+    telefone.addEventListener('input', function(e) {
+    const value = e.target.value;
+    const numbers = value.replace(/\D/g, '');
+    const formatted = numbers.replace(/(\d{2})(\d{4,5})(\d{4})/, '($1) $2-$3');
+    e.target.value = formatted;
+    });
+
+    const cpf = document.getElementById('cpf');
+
+    cpf.addEventListener('input', function(e) {
+    const value = e.target.value;
+    const numbers = value.replace(/\D/g, '');
+    const formatted = numbers.length > 11 ? numbers.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5') : numbers.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    e.target.value = formatted;
+    });
 
 </script>
 
