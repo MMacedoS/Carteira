@@ -226,6 +226,8 @@ class AdministrativoController extends \Controller{
         $dados = (object)$this->reserva_model->getDadosReservas($request)['data'][0];
         $consumos = (object)$this->consumo_model->getDadosConsumos($request)['data'];
         $pagamentos = $this->pagamento_model->getDadosPagamentos($request)['data'];
+        $diarias = (object)$this->consumo_model->getDadosDiarias($request)['data'];
+        $dados->lista_diarias = $diarias;
         $dados->lista_consumos = $consumos;
         $dados->pagamentos = $pagamentos;
         $this->viewImpressao('nota_cliente',$dados);

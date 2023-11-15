@@ -129,6 +129,26 @@ class ConsumoModel extends ConexaoModel {
         return self::messageWithData(201, 'nenhum dado encontrado', []);
     }
 
+    public function getDadosDiarias($id){
+        $cmd  = $this->conexao->query(
+            "SELECT 
+                *
+            FROM 
+                diarias
+            WHERE 
+                reserva_id = $id
+            "
+        );
+
+        if($cmd->rowCount() > 0)
+        {
+            $dados = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return self::messageWithData(201, 'diarias encontrados', $dados);
+        }
+
+        return self::messageWithData(201, 'nenhum dado encontrado', []);
+    }
+
     public function getRemoveConsumo($id)
     {
         $dados = self::findById($id)['data'][0];

@@ -19,10 +19,13 @@ class ImpressaoController extends \Controller{
     {       
         $dados = (object)$this->reserva_model->getDadosReservas($request)['data'][0];
         $consumos = (object)$this->consumo_model->getDadosConsumos($request)['data'];
+        $diarias = (object)$this->consumo_model->getDadosDiarias($request)['data'];
+        var_dump($diarias);
         $pagamentos = $this->pagamento_model->getDadosPagamentos($request)['data'];
         $dados->lista_consumos = $consumos;
+        $dados->lista_diarias = $diarias;
         $dados->pagamentos = $pagamentos;
-        $this->viewImpressao('nota_cliente',$dados);
+        // $this->viewImpressao('nota_cliente',$dados);
     }   
 
     public function findParamByParam($param) {
