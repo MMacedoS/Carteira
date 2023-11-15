@@ -4,7 +4,7 @@
 .autenticar.php
 # .config.php
 .functions.php
-/Config
+# /Config
 /vendor
 /fonts
 # /rota
@@ -12,4 +12,4 @@
 /image
 /anexos
 .htaccess
-index.php
+# index.php
