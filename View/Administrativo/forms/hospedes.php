@@ -2,7 +2,7 @@
     <div class="form-group">
         <div class="row">
             <div class="col-sm-8">
-                <h4>Hospedes</h4>
+                <h4>Clientes</h4>
             </div>
             <div class="col-sm-4 text-right">
                 <button class="btn btn-primary" id="novo">Adicionar</button>
@@ -37,7 +37,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cadastro de Hospedes</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Cadastro de Cliente</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -59,11 +59,11 @@
                     <div class="form-row">
                         <div class="col-sm-6">
                             <label for="">CPF</label>
-                            <input type="text" name="cpf" id="cpf"  placeholder="ex: 05555544455" class="form-control">
+                            <input type="text" name="cpf" id="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="18" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label for="">Telefone</label>
-                            <input type="text" name="telefone" id="telefone"  placeholder="ex: 75989745632" class="form-control">
+                            <input type="text" name="telefone" id="telefone"  pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" maxlength="14" class="form-control">
                         </div>                       
                         <div class="col-sm-12">
                             <label for="">Endereço</label>

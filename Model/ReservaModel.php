@@ -278,6 +278,7 @@ class ReservaModel extends ConexaoModel {
                 h.nome,
                 r.dataEntrada,
                 r.dataSaida,
+                r.tipo,
                 r.status
             FROM
                 $this->model r

@@ -40,9 +40,9 @@
             <div class="col-sm-3">
                 <select name="status" id="busca_status" class="form-control">
                     <option value="">Selecione o status</option>
-                    <option value="1">Reservada</option>
+                    <option value="1">Orçamento</option>
                     <option value="2">Confirmada</option>
-                    <option value="3">Hospedadas</option>
+                    <option value="3">andamento</option>
                     <option value="4">Finalizada</option>
                     <option value="5">Cancelada</option>
                 </select>
@@ -157,7 +157,7 @@
 <script>
     var hospede = null;
     function valores(){
-        var dias = moment($('#saida').val()).diff(moment($('#entrada').val()), 'days');
+        var dias = moment($('#saida').val()).diff(moment($('#entrada').val()), 'month');
          var valor = $("#valor").val();
             $('#valores').removeClass('text-success');
             $('#valores').addClass('text-success');
@@ -178,7 +178,7 @@
     });
 
     $('#novo').click(function(){
-        $('#exampleModalLabel').text("Cadastro de Reservas");
+        $('#exampleModalLabel').text("Cadastro de Ordens");
         $('#modal').modal('show');        
     });
 
